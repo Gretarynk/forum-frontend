@@ -1,0 +1,33 @@
+.wrapper{
+    width: 500px;
+    height: 500px;
+    background-color: var(--background);
+   display: flex;
+   align-items: center;
+  margin-top: 5rem;
+}
+
+.main{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem 0;
+    
+}
+.textError{
+    color: brown;
+    font-size:x-large;
+    
+}
+.input{
+    padding: 1.1rem;
+    border: none;
+    font-size: large;
+    color: var(--main-darkblue-color);
+}
+.btnLogin{
+    background-color: var(--main-palegreen-color);
+    color: var(--main-light-color);
+}
