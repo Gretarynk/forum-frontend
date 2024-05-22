@@ -8,11 +8,12 @@ type PageTemplateProps = {
   children: ReactNode;
 };
 const PageTemplate = ({ children }: PageTemplateProps) => {
-  return <div className={styles.wrapper}>
-  
-    <Header/>
-    <div className={styles.content}>{children}</div>
-   <Footer/>
-  </div>;
+  return (
+    <div className={styles.wrapper}>
+      <Header />
+      <div className={styles.content}>{children}</div>
+      <Footer />
+    </div>
+  );
 };
 export default PageTemplate;

@@ -1,0 +1,13 @@
+.main{
+    width: 100%;
+    background-color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.input{
+    padding: 1rem;
+    border: none;
+    border-bottom: 1px solid var(--main-darkblue-color);
+}
