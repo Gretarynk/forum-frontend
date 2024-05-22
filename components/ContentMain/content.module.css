@@ -1,0 +1,43 @@
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+.mainLink{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--box2-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    
+
+}
+.box1{
+    background-color: var(--box1-color);
+    color: var(--box5-color);
+}
+.box2{
+    background-color: var(--box2-color);
+    color: var(--box4-color);
+}
+.box3{
+    background-color: var(--box3-color);
+}
+.box4{
+    background-color: var(--box4-color);
+}
+.box5{
+    background-color: var(--box5-color);
+}
+.box6{
+    background-color: var(--box6-color);
+}

@@ -5,9 +5,16 @@
   --main-yellowdark-color:#BA9C46;
   --main-palegreen-color:#83A781;
   --main-blue-color:#3888A2;
+  --pale-blue-color:#BDE3E4;
   --background:#f6f3cfc5;
+  --box1-color:#D1CB5C;
+  --box2-color:#F6F3CF;
+  --box3-color:#3888A2;
+  --box4-color:#253C42;
+  --box5-color:#4D6F4B;
+  --box6-color:#D3A62D;
 }
-
-html body{
+body{
   margin: 0;
-}
+  min-height:100vh;
+} 

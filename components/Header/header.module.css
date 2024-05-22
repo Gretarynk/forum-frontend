@@ -37,14 +37,17 @@
 }
 .btnBox{
     align-self: center;
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 .btnLogin{
-    background-color: var(--main-palegreen-color);
+    background-color: transparent;
     color: var(--main-light-color);
+ 
+   
    
 }
 .btnSign{
-    background-color: var(--main-darkblue-color);
+    background-color: transparent;
     color: var(--main-light-color);
+    
 }
