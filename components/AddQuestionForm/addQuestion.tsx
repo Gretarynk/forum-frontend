@@ -9,7 +9,6 @@ const AddQuestion = () => {
   const router = useRouter();
   const [question_title, setQuestion_title] = useState("");
   const [question_text, setQuestion_text] = useState("");
-
   const [region, setRegion] = useState("");
 
   const addQuestion = async () => {
