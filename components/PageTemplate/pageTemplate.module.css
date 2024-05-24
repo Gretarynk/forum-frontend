@@ -3,6 +3,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     background-image: url("../../public/Background.png");
     background-repeat: no-repeat;
@@ -10,4 +11,8 @@
     background-position: center;
     background-blend-mode:soft-light;
    
+   
+}
+.content{
+    margin-bottom: 10%;
 }

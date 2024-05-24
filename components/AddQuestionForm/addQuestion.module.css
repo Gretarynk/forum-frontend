@@ -1,13 +1,62 @@
 .main{
     width: 100%;
-    background-color: white;
+    background-color:var(--main-light-color);
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: rgba(17, 17, 26, 0.329) 0px 1px 0px;
+    
+}
+.inputsWrapper{
     display: flex;
     flex-direction: column;
 }
 
-.input{
+.inputText{
     padding: 1rem;
+    height: 50px;
     border: none;
-    border-bottom: 1px solid var(--main-darkblue-color);
+    /* border-bottom: 1px solid var(--main-darkblue-color); */
+    background-color: white;
+    /* box-shadow: rgba(244, 194, 46, 0.156) 0px 30px 60px -12px inset, rgba(188, 170, 91, 0.628) 0px 18px 36px -18px inset; */
+     box-shadow: rgb(232, 219, 204) 3px 3px 6px 0px inset, rgba(255, 248, 231, 0.5) -3px -3px 6px 1px inset; 
+     outline: none;
+}
+.inputTitle{
+    padding: 1rem;
+    outline: none;
+    border: none;
+    /* border-bottom: 1px solid var(--main-darkblue-color); */
+    background-color: var(--main-light-color);
+    box-shadow: rgb(232, 219, 204) 3px 3px 6px 0px inset, rgba(253, 236, 197, 0.5) -3px -3px 6px 1px inset;
+}
+.region{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--main-yellowdark-color);
+}
+.selection{
+    background-color: var(--main-light-color);
+    width: 200px;
+    height: 30px;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--main-darkblue-color);
+    outline: none;
+    box-shadow: rgb(232, 219, 204) 3px 3px 6px 0px inset, rgba(255, 248, 231, 0.5) -3px -3px 6px 1px inset;
+}
+.btnWrapper{
+    align-self: flex-end;
+
+}
+.questionBtn{
+    padding: 1rem 2rem;
+    background-color: var(--main-blue-color);
+    color: white;
 }

@@ -3,15 +3,17 @@ import { useState,useEffect } from "react";
 import axios from "axios";
 import cookies from "js-cookie";
 import Button from "../Button/button";
-import ReplyWrapper from "../ReplyWrapper/replyWrapper";
 import styles from "../ReplyForm/reply.module.css"
+// import {TextBox} from 'devextreme-react/text-box'
 
+type ReplyProps={
+  fetchAnswers:()=>void;
+}
 
-
-const Reply=()=>{
+const Reply=({fetchAnswers}:ReplyProps)=>{
     const router=useRouter();
 const [answer_text,setAnswer_text]=useState('')
-//to do 
+
 
 
     const addReply= async()=>{
@@ -28,7 +30,8 @@ const [answer_text,setAnswer_text]=useState('')
      const response= await axios.post(`${process.env.SERVER_URL}/question/${router.query.id}/answer`, newAnswer, {headers})
      console.log("answer",response.data)
      if(response.status === 200){
-      console.log('posted')
+      fetchAnswers();
+      setAnswer_text('');
      }
         }catch (err) {
             if (err.response.status === 401) {
@@ -42,11 +45,10 @@ const [answer_text,setAnswer_text]=useState('')
     return(
         <>
 
-        
-        
         <div className={styles.replyBox}>
-            <input className={styles.replyInput} placeholder="Your reply..." value={answer_text} onChange={(e) => setAnswer_text(e.target.value)} />
-        </div><Button onClick={addReply} text="Submit" type="VALID" />
+            <textarea className={styles.replyInput} placeholder="Your reply..." value={answer_text} onChange={(e) => setAnswer_text(e.target.value)} />
+        <Button className={styles.replyBtn} onClick={addReply} text="Submit" type="VALID" />
+        </div>
         </>
     )
 }

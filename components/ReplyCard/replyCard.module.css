@@ -1,0 +1,13 @@
+.main{
+    max-width: 90%;
+    background-color: var(--main-light-color);
+    /* border-bottom: 3px solid var(--main-blue-color); */
+    padding: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+.main p{
+    font-size: 1.3rem;
+}
+.main h5{
+    color: var(--main-palegreen-color);
+}

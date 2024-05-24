@@ -5,7 +5,7 @@ import axios from "axios";
 import cookies from "js-cookie";
 import Button from "../Button/button";
 
-const AddQuestion = () => {
+const AddQuestion = ({fetchQuestions}) => {
   const router = useRouter();
   const [question_title, setQuestion_title] = useState("");
   const [question_text, setQuestion_text] = useState("");
@@ -27,7 +27,7 @@ const AddQuestion = () => {
         { headers }
       );
       if (response.status === 200) {
-        router.push("/ask");
+        fetchQuestions();
       }
     } catch (err) {
       if (err.response.status === 401) {
@@ -39,16 +39,17 @@ const AddQuestion = () => {
 
   return (
     <div className={styles.main}>
+      <div className={styles.inputsWrapper}>
       <input
         value={question_title}
         onChange={(e) => setQuestion_title(e.target.value)}
-        className={styles.input}
+        className={styles.inputTitle}
         placeholder="Title"
       />
       <input
         value={question_text}
         onChange={(e) => setQuestion_text(e.target.value)}
-        className={styles.input}
+        className={styles.inputText}
         placeholder="Type your question"
       />
       <div className={styles.region}>
@@ -66,8 +67,11 @@ const AddQuestion = () => {
           <option value="Zemaitija">Zemaitija</option>
         </select>
       </div>
+      </div>
       <div className={styles.btnWrapper}>
-        <Button onClick={addQuestion} text="Submit" type="VALID" />
+        <Button className={styles.questionBtn
+          
+        } onClick={addQuestion} text="Submit" type="VALID" />
       </div>
     </div>
   );

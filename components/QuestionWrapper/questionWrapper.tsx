@@ -11,6 +11,7 @@ const QuestionWrapper = ({ questions }: QuestionWrapperProps) => {
       <div className={styles.filter}>
         <h2>Sort by</h2>
       </div>
+      <div className={styles.questionBox}>
       {questions.map((question) => (
         <QuestionCard
           key={question.id}
@@ -21,6 +22,7 @@ const QuestionWrapper = ({ questions }: QuestionWrapperProps) => {
           region={question.region}
         />
       ))}
+      </div>
     </div>
   );
 };

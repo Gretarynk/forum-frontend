@@ -1,5 +1,10 @@
 import styles from "../QuestionTitle/questionTitle.module.css";
 import Link from "next/link";
+import { format } from "date-fns";
+
+const formatDate = (dateString: string): string => {
+  return format(new Date(dateString), 'yyyy-MM-dd HH:mm:ss');
+};
 
 type QuestionProps = {
   question_title: string;
@@ -7,14 +12,16 @@ type QuestionProps = {
   date: string;
   id: string;
 };
+
+
 const QuestionTitle = ({ id, question_title, date, region }: QuestionProps) => {
   return (
     <div className={styles.main}>
-      <Link href={`/question/${id}`}>
+      <Link className={styles.links} href={`/question/${id}`}>
         <h1>{question_title}</h1>
       </Link>
       <h4>{region}</h4>
-      <h4>{date}</h4>
+      <h4>{formatDate(date)}</h4>
     </div>
   );
 };

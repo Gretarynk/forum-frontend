@@ -10,7 +10,8 @@ import AddQuestion from "@/components/AddQuestionForm/addQuestion";
 const AskQuestion = () => {
   const router = useRouter();
 
-  const [questions, setQuestions] = useState<QuestionType[] | null>(null);
+const [questions, setQuestions] = useState<QuestionType[] | null>(null);
+
   const fetchQuestions = async () => {
     try {
       const headers = {
@@ -35,7 +36,7 @@ const AskQuestion = () => {
   return (
     <PageTemplate>
       <div>
-        <AddQuestion />
+        <AddQuestion fetchQuestions={fetchQuestions} />
       </div>
       <div>{questions && <AddFetchBox questions={questions} />}</div>
     </PageTemplate>

@@ -8,6 +8,7 @@ import Reply from "../../components/ReplyForm/reply";
 import ReplyWrapper from "../../components/ReplyWrapper/replyWrapper";
 import { AnswerType } from "../../types/answer";
 
+
 const Question = () => {
   const router = useRouter();
   const [answers,setAnswers]=useState <AnswerType[] | null>(null)
@@ -66,14 +67,16 @@ useEffect(()=>{
 
 
   return (
+   
     <PageTemplate>
       {question && <QuestionBox question={question} />}
      
 {answers && <ReplyWrapper answers={answers}/>}
 
        
-      <Reply/>
+      <Reply fetchAnswers={fetchAnswers}/>
     </PageTemplate>
+   
   );
 };
 export default Question;
