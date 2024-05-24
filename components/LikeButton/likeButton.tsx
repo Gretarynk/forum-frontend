@@ -8,15 +8,16 @@ import redHeart from "../../public/red-heart.svg"
 type LikeButtonProps = {
   answerId: string;
   likesCount: number;
-  fetchAnswers: () => void;
+  updateLikes: (answerId: string, newLikes: string[]) => void;
+  updateDislikes: (answerId: string, newDislikes: string[]) => void;
 };
 
 const LikeButton = ({
   answerId,
   likesCount,
-  fetchAnswers,
+  updateLikes, updateDislikes,
 }: LikeButtonProps) => {
-  const [localLikesCount, setLocalLikesCount] = useState(likesCount);
+//   const [localLikesCount, setLocalLikesCount] = useState(likesCount);
   const [hasLiked, setHasLiked] = useState(false);
  
 
@@ -24,7 +25,7 @@ const LikeButton = ({
     try {
       const headers = { authorization: cookies.get("jwt_token") };
  
-    setLocalLikesCount(prevCount => hasLiked ? prevCount - 1 : prevCount + 1);
+    // setLocalLikesCount(prevCount => hasLiked ? prevCount - 1 : prevCount + 1);
       const response = await axios.post(
         `${process.env.SERVER_URL}/answer/${answerId}/like`,
         {},
@@ -32,22 +33,17 @@ const LikeButton = ({
       );
       if (response.status === 200) {
         setHasLiked(!hasLiked);
-        localStorage.setItem(`likes_number_${answerId}`,!hasLiked? "true" : "")
-        fetchAnswers();
+        updateLikes(answerId, response.data.answer.likes_number);
+        updateDislikes(answerId, response.data.answer.dislikes);
       }
     } catch (err) {
       console.error(err);
    
-    setLocalLikesCount(prevCount => hasLiked ? prevCount - 1 : prevCount + 1);
+    // setLocalLikesCount(prevCount => hasLiked ? prevCount - 1 : prevCount + 1);
     }
   };
 
-  useEffect(() => {
-    const userLiked = localStorage.getItem(`likes_number_${answerId}`);
-    if (userLiked) {
-      setHasLiked(true);
-    }
-  }, [answerId]);
+//
 
   return (
     <div>
@@ -59,7 +55,7 @@ const LikeButton = ({
         src={redHeart}
        
       /> 
-      Like {localLikesCount}
+      Like {likesCount}
       
     </div>
   );
