@@ -1,5 +1,5 @@
 import styles from "../LikeButton/likeButton.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import cookies from "js-cookie";
 import Image from "next/image";
@@ -32,6 +32,7 @@ const LikeButton = ({
       );
       if (response.status === 200) {
         setHasLiked(!hasLiked);
+        localStorage.setItem(`likes_number_${answerId}`,!hasLiked? "true" : "")
         fetchAnswers();
       }
     } catch (err) {
@@ -40,6 +41,13 @@ const LikeButton = ({
     setLocalLikesCount(prevCount => hasLiked ? prevCount - 1 : prevCount + 1);
     }
   };
+
+  useEffect(() => {
+    const userLiked = localStorage.getItem(`likes_number_${answerId}`);
+    if (userLiked) {
+      setHasLiked(true);
+    }
+  }, [answerId]);
 
   return (
     <div>

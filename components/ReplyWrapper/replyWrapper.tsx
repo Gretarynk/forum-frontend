@@ -9,6 +9,11 @@ type ReplyWrapperProps={
 
 const ReplyWrapper=({answers, fetchAnswers}:ReplyWrapperProps)=>{
     console.log( 'replywrapper',answers)
+
+ 
+
+
+
     return(
         <div className={styles.main}>
            {answers.map((answer) => (
@@ -18,6 +23,7 @@ const ReplyWrapper=({answers, fetchAnswers}:ReplyWrapperProps)=>{
           answer_text={answer.answer_text}
           date={answer.date}
           likes_number={answer.likes_number}
+          dislikes={answer.dislikes}
           fetchAnswers={fetchAnswers}
           
          
