@@ -12,6 +12,7 @@ type QuestionProps = {
   region: string;
   date: string;
   id:string;
+  answers:number;
 };
 
 
@@ -19,15 +20,18 @@ const QuestionCard = ({id,
   question_title,
   question_text,
   date,
-  region,
+  region, answers,
 }: QuestionProps) => {
+ console.log(answers, region)
   return (
     <div className={styles.main}>
       <Link className={styles.link} href={`/question/${id}`}>
       <h1>{question_title}</h1></Link>
       <h4>{region}</h4>
       <h3>{question_text}</h3>
-      <h4 className={styles.date}>{formatDate(date)}</h4>
+      <div className={styles.dateReplyBox}>
+      <h5 className={styles.date}>{formatDate(date)}</h5>
+      <h4>replies:{answers}</h4></div>
     </div>
   );
 };

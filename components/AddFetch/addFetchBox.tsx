@@ -2,6 +2,7 @@ import styles from "../AddFetch/addFetchBox.module.css";
 import { QuestionType } from "../../types/question";
 import QuestionTitle from "../QuestionTitle/questionTitle";
 
+
 type AddFetchBoxProps = {
   questions: QuestionType[];
 };
@@ -15,6 +16,7 @@ const AddFetchBox = ({ questions }: AddFetchBoxProps) => {
           question_title={question.question_title}
           date={question.date}
           region={question.region}
+         
         />
       ))}
     </div>

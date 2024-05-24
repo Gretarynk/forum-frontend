@@ -14,8 +14,6 @@ type ReplyCardProps={
     updateLikes: (answerId: string, newLikes: string[]) => void;
     updateDislikes: (answerId: string, newDislikes: string[]) => void;
   
-    // likes_number:string[];
-    // dislikes:string[];
 
 }
 

@@ -7,9 +7,12 @@
 }
 
 .main h1{
-    color: var(--box4-color);
+    color: var(--box5-color);
 }
 .main h4{
+    color: var(--box5-color);
+}
+.main h5{
     color: var(--main-palegreen-color);
 }
 .date{
@@ -18,4 +21,8 @@
 .link{
    
     text-decoration-color: rgb(196, 194, 194);
+  }
+  .dateReplyBox{
+    display: flex;
+    justify-content: space-between;
   }

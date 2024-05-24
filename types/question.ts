@@ -4,5 +4,6 @@ export type QuestionType={
     question_text: string;
     date:string;
     region:string;
+    answers:number;
 
 }
