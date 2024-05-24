@@ -71,7 +71,7 @@ useEffect(()=>{
     <PageTemplate>
       {question && <QuestionBox question={question} />}
      
-{answers && <ReplyWrapper answers={answers}/>}
+{answers && <ReplyWrapper  fetchAnswers={fetchAnswers} answers={answers}/>}
 
        
       <Reply fetchAnswers={fetchAnswers}/>

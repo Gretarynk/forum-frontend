@@ -1,0 +1,11 @@
+.likeBtn{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    fill: red;
+    
+}
+.likeBtn svg{
+    fill: red;
+}
+

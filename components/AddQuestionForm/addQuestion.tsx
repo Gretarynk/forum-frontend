@@ -5,7 +5,12 @@ import axios from "axios";
 import cookies from "js-cookie";
 import Button from "../Button/button";
 
-const AddQuestion = ({fetchQuestions}) => {
+type AddQuestionProps={
+  fetchQuestions:()=>void;
+}
+
+
+const AddQuestion = ({fetchQuestions}:AddQuestionProps) => {
   const router = useRouter();
   const [question_title, setQuestion_title] = useState("");
   const [question_text, setQuestion_text] = useState("");
@@ -28,6 +33,9 @@ const AddQuestion = ({fetchQuestions}) => {
       );
       if (response.status === 200) {
         fetchQuestions();
+        setQuestion_title('')
+        setQuestion_text('')
+        setRegion('')
       }
     } catch (err) {
       if (err.response.status === 401) {
@@ -46,19 +54,20 @@ const AddQuestion = ({fetchQuestions}) => {
         className={styles.inputTitle}
         placeholder="Title"
       />
-      <input
+      <textarea
         value={question_text}
         onChange={(e) => setQuestion_text(e.target.value)}
         className={styles.inputText}
         placeholder="Type your question"
       />
       <div className={styles.region}>
-        <h3>Choose region</h3>
+        <h3>Choose region *</h3>
         <select
           value={region}
           onChange={(e) => setRegion(e.target.value)}
           className={styles.selection}
         >
+          <option value="">---------</option>
           <option value="Vilnius and around">Vilnius and around</option>
           <option value="Dzukija">Dzukija</option>
           <option value="Suvalkija"> Suvalkija</option>

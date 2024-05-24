@@ -37,8 +37,9 @@ const [questions, setQuestions] = useState<QuestionType[] | null>(null);
     <PageTemplate>
       <div>
         <AddQuestion fetchQuestions={fetchQuestions} />
-      </div>
+      
       <div>{questions && <AddFetchBox questions={questions} />}</div>
+      </div>
     </PageTemplate>
   );
 };

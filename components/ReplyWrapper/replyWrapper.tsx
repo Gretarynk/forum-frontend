@@ -4,9 +4,10 @@ import { AnswerType } from "@/types/answer"
 
 type ReplyWrapperProps={
     answers:AnswerType [];
+    fetchAnswers:()=>void;
 }
 
-const ReplyWrapper=({answers}:ReplyWrapperProps)=>{
+const ReplyWrapper=({answers, fetchAnswers}:ReplyWrapperProps)=>{
     console.log( 'replywrapper',answers)
     return(
         <div className={styles.main}>
@@ -16,6 +17,9 @@ const ReplyWrapper=({answers}:ReplyWrapperProps)=>{
           id={answer.id}
           answer_text={answer.answer_text}
           date={answer.date}
+          likes_number={answer.likes_number}
+          fetchAnswers={fetchAnswers}
+          
          
         />
       ))}
