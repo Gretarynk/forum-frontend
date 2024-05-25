@@ -8,7 +8,7 @@ const formatDate = (dateString: string): string => {
 
 type QuestionProps = {
   question_title: string;
-  question_text: string;
+  question_text?: string;
   region: string;
   date: string;
   id:string;

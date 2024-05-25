@@ -5,6 +5,7 @@ import axios from "axios";
 import cookies from "js-cookie";
 import Button from "../Button/button";
 
+
 type AddQuestionProps={
   fetchQuestions:()=>void;
 }

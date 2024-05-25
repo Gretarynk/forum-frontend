@@ -9,9 +9,7 @@ const QuestionWrapper = ({ questions }: QuestionWrapperProps) => {
   console.log(questions);
   return (
     <div className={styles.main}>
-      <div className={styles.filter}>
-        <h2>Sort by</h2>
-      </div>
+     
       <div className={styles.questionBox}>
         {questions.map((question) => (
           <QuestionCard
