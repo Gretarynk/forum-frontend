@@ -15,8 +15,9 @@ const FilterOptions = ({ selectedRegion, onSelectRegion , onSortChange, onApplyF
 
   return (
     <div className={styles.filterWrapper}>
+      <h3>Choose by region or replies</h3>
       <div className={styles.filterRegionBox} >
-      <label htmlFor="regionSelect">Select Region:</label>
+      
       <select className={styles.selection} id="regionSelect" value={selectedRegion} onChange={(e)=> onSelectRegion(e.target.value)}>
         <option value="">  All regions</option>
         
@@ -29,14 +30,14 @@ const FilterOptions = ({ selectedRegion, onSelectRegion , onSortChange, onApplyF
       </select>
       </div>
       <div className={styles.repliesFilter}>
-        <select className={styles.filterByRepliesBox} onChange={onSortChange}>
+        <select className={styles.selection} onChange={onSortChange}>
         <label htmlFor="repliesSelect">Question with replies:</label>
-        <option value="">--------</option>
+        <option value="">Sort by replies</option>
         <option value="replies">Replies</option>
         <option value="noReplies">No replies</option>
         </select>
       </div>
-    <Button  onClick={onApplyFilter} text="Sort"/>
+    <Button className={styles.filterBtn}  onClick={onApplyFilter} text="Filter"/>
 
     </div>
   );

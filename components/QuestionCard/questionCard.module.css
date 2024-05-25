@@ -1,5 +1,5 @@
 .main{
-    max-width: 90%;
+    width: 90%;
     background-color: var(--main-light-color);
     border-bottom: 3px solid var(--main-blue-color);
     padding: 2rem;

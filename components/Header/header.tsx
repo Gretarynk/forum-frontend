@@ -1,4 +1,6 @@
 import styles from "../Header/header.module.css";
+import { useState } from "react";
+import SignUp from "../SignModal/sign";
 import Image from "next/image";
 import logo from "../../public/bicyleLeft.svg";
 import line from "../../public/Vector 1.svg";
@@ -8,6 +10,7 @@ import { links } from "../../constans/links";
 import Link from "next/link";
 
 const Header = () => {
+  const [showSignUp, setShowSignUp] = useState(false);
   return (
     <div className={styles.main}>
       <div className={styles.logoBox}>
@@ -25,8 +28,16 @@ const Header = () => {
             text="Log In"
           />
         </Link>
-        <Button className={styles.btnSign} onClick={() => {}} text="Sign Up" />
+        <Button className={styles.btnSign} onClick={() => setShowSignUp(true)} text="Sign Up" />
+        {showSignUp && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modalContent}>
+            <SignUp onClose={() => setShowSignUp(false)} />
+          </div>
+        </div>
+      )} 
       </div>
+       
     </div>
   );
 };

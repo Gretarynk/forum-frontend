@@ -11,3 +11,22 @@
     outline: none;
     box-shadow: rgb(232, 219, 204) 3px 3px 6px 0px inset, rgba(255, 248, 231, 0.5) -3px -3px 6px 1px inset;
 }
+.filterBtn{
+    background-color: transparent;
+   
+    
+    
+}
+.filterWrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    background-color: var(--main-light-color);
+    padding: 1em 2rem;
+    color: var(--box5-color);
+    gap: 1rem;
+}
+.filterWrapper h3{
+    padding-left: 4rem;
+}

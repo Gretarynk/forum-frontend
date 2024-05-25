@@ -1,6 +1,6 @@
 import styles from "../PageTemplate/pageTemplate.module.css";
 import Header from "../Header/header";
-import { links } from "../../constans/links";
+// import { links } from "../../constans/links";
 import { ReactNode } from "react";
 import Footer from "../Footer/footer";
 
