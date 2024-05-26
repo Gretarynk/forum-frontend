@@ -1,0 +1,24 @@
+.burger{
+    width: 60px;
+    height: 60px;
+    
+}
+.burgerMenu{
+   
+   cursor: pointer;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border: none;
+   
+}
+.burgerMenu{
+    display: none;
+}
+@media only screen and (max-width: 900px){
+    .burgerMenu{
+        display: block;
+        position: absolute;
+        transform: translate(-200%, 35%);
+    }
+}

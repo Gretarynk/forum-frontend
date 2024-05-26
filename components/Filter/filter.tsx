@@ -15,7 +15,8 @@ const FilterOptions = ({ selectedRegion, onSelectRegion , onSortChange, onApplyF
 
   return (
     <div className={styles.filterWrapper}>
-      <h3>Choose by region or replies</h3>
+      <h3 className={styles.filterTitle}>Choose by region or replies</h3>
+      <div className={styles.filterSelections}>
       <div className={styles.filterRegionBox} >
       
       <select className={styles.selection} id="regionSelect" value={selectedRegion} onChange={(e)=> onSelectRegion(e.target.value)}>
@@ -38,7 +39,7 @@ const FilterOptions = ({ selectedRegion, onSelectRegion , onSortChange, onApplyF
         </select>
       </div>
     <Button className={styles.filterBtn}  onClick={onApplyFilter} text="Filter"/>
-
+    </div>
     </div>
   );
 };

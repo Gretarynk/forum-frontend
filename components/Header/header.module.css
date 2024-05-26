@@ -2,30 +2,31 @@
    
     background-color: var(--main-yellow-color);
     width: 100%;
+    min-width: 400px;
     height: 120px;
     display:flex;
     justify-content: center;
-
-
-    
-
+    flex-wrap: wrap;
 
 }
 .logoBox{
     width:400px;
     height: 70px;
+    background-color:var(--box6-color) ;
     display: flex;
     justify-content: center;
     align-self: end;
     cursor: pointer;
+    position: absolute;
+    transform: translate(-100%, -3%);
     
 }
 
 .logo{
-    align-self: end;
- 
+
+width: 100%;
     
-    object-fit: cover;
+    
 }
 .line{
     align-self: end;
@@ -39,14 +40,103 @@
     padding-left: 1rem;
 }
 .btnLogin{
-    background-color: transparent;
+    background-color: var(--main-yellow-color);
     color: var(--main-light-color);
+    box-shadow: rgba(77, 69, 38, 0.447) 0px 20px 30px -10px;
  
    
    
 }
 .btnSign{
-    background-color: transparent;
+    background-color: var(--main-yellow-color);
     color: var(--main-light-color);
+    box-shadow: rgba(77, 69, 38, 0.447) 0px 20px 30px -10px;
     
+}
+.btnBox{
+    position: relative;
+    transform: translate(130%, 70%);
+}
+
+.mobileMenu{
+    display: none;
+   
+    position: fixed;
+    right: 100%;
+    transition: right 0.5s ease; 
+}
+.mobileMenuOpen {
+    display: none;
+    right: 0;
+}
+@media only screen and (max-width: 1118px){
+
+    .btnBox{
+        position: relative;
+        transform: translate(-50%, 90%);
+    }
+
+}
+@media only screen and (max-width: 900px){
+
+    .btnBox{
+        position: relative;
+        transform: translate(90%, -9%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1rem;
+  
+    }
+    .btnSign{
+        background-color: transparent;
+        padding: 1rem;
+    }
+
+    .logoBox{
+        width:300px;
+        height: 70px;
+        background-color:var(--box6-color) ;
+        display: flex;
+        justify-content: center;
+        align-self: end;
+        cursor: pointer;
+        position: fixed;
+        right: -21%;
+       
+   
+        
+    }
+    .mobileMenu{
+        display: flex;
+        justify-content: flex-start;
+        background-color: var(--box6-color);
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+       left: -1000px;
+        top: 6rem;
+     transition: 1s; 
+        
+
+    }
+    .mobileMenuOpen{
+        left: 0px;
+    }
+    .mobileNav ul{
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        
+        
+    }
+    .mobileMenu a{
+        color: var(--main-light-color);
+        text-decoration: none;
+        font-size: 20px;
+        padding: 1rem;
+
+    }
+
+   
 }

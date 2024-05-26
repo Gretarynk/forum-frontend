@@ -61,3 +61,17 @@
     background-color: var(--main-blue-color);
     color: white;
 }
+@media only screen and (max-width: 920px){
+    .main{
+        width: 90%;
+        background-color:var(--main-light-color);
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        box-shadow: rgba(17, 17, 26, 0.329) 0px 1px 0px;
+        margin-top: 20px;
+        
+    }
+
+}

@@ -1,7 +1,7 @@
 import styles from "../SignModal/sign.module.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import Link from "next/link";
 import { useRouter } from "next/router";
 import Button from "../Button/button";
 import cookies from "js-cookie";
@@ -54,7 +54,11 @@ const SignUp = ({onClose}:SignUpProps) => {
     <>
     <div className={styles.mainBox}>
     <div className={styles.wrapper}>
+        <Button className={styles.btnClose} onClick={onClose} text="X" />
       <div className={styles.main}>
+        <div className={styles.signText}>
+        <h2>Create Account</h2>
+        </div>
         <input
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -72,7 +76,11 @@ const SignUp = ({onClose}:SignUpProps) => {
           className={styles.input}
           placeholder="password" />
         <Button className={styles.btnLogin} onClick={signUp} text="Sign UP" />
-        <Button className={styles.btnClose} onClick={onClose} text="Close" />
+        <div className={styles.linkWrapper}>
+          <Link className={styles.link} href={'/login'}>
+        <h4>If you already have account, Login</h4>
+        </Link>
+        </div>
         {isSigned && (
           <div className={styles.textSigned}>
             Your account was created Successfully!

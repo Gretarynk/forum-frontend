@@ -1,5 +1,6 @@
 .questionBox{
-    width: 100%;
+    margin: auto;
+    width: 90%;
     background-color: var(--main-light-color);
     border-bottom: 3px solid var(--main-blue-color);
     padding: 2rem;
@@ -8,11 +9,16 @@
 
 
 .questionBox h1{
-    color: var(--box4-color);
+    font-size: 20px;
+    color: var(--main-darkgreen-color);
 }
 .questionBox h4{
+    color: var(--main-blue-color);
+}
+.questionBox h5{
     color: var(--main-palegreen-color);
 }
 .questionBox h3{
+    font-size: 15px;
     color: var(--box5-color);
 }

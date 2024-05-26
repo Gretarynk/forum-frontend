@@ -1,7 +1,7 @@
 .main{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 .mainLink{
     text-decoration: none;
@@ -22,8 +22,8 @@
 
 }
 .box1{
-    background-color: var(--box1-color);
-    color: var(--box5-color);
+    background-color: var(--box5-color);
+    /* color: var(--box6-color); */
 }
 .box2{
     background-color: var(--box2-color);
@@ -36,7 +36,7 @@
     background-color: var(--box4-color);
 }
 .box5{
-    background-color: var(--box5-color);
+    background-color: var(--box6-color);
 }
 .box6{
     background-color: var(--box6-color);

@@ -18,10 +18,11 @@
     
 }
 .filterWrapper{
+    margin: auto;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
+    width: 90%;
     background-color: var(--main-light-color);
     padding: 1em 2rem;
     color: var(--box5-color);
@@ -29,4 +30,31 @@
 }
 .filterWrapper h3{
     padding-left: 4rem;
+    
+}
+.filterSelections{
+    display: flex;
+    align-items: center;
+}
+@media only screen and (max-width: 920px){
+    .filterWrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       margin-top: 2rem;
+        width: 90%;
+        padding: 1em 1rem;
+        
+    }
+    .filterWrapper h3{
+       margin: 0;
+       padding-left: 0rem;
+        
+    }
+    .filterSelections{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

@@ -25,13 +25,16 @@ const QuestionCard = ({id,
  console.log(answers, region)
   return (
     <div className={styles.main}>
+      <div className={styles.titleBox}>
       <Link className={styles.link} href={`/question/${id}`}>
       <h1>{question_title}</h1></Link>
+      
       <h4>{region}</h4>
+      </div>
       <h3>{question_text}</h3>
       <div className={styles.dateReplyBox}>
       <h5 className={styles.date}>{formatDate(date)}</h5>
-      <h4>replies:{answers}</h4></div>
+      <h5>replies:{answers}</h5></div>
     </div>
   );
 };

@@ -20,3 +20,13 @@
     scale: 1.3;
     color: var(--main-darkblue-color);
 }
+.navDesktop{
+    position: absolute;
+    transform: translate(-30%, -50%);
+}
+
+@media only screen and (max-width: 900px){
+    .navDesktop{
+        display: none;
+    }
+}

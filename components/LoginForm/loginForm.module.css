@@ -5,6 +5,7 @@
    display: flex;
    align-items: center;
   margin-top: 5rem;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .main{
@@ -30,4 +31,11 @@
 .btnLogin{
     background-color: var(--main-palegreen-color);
     color: var(--main-light-color);
+}
+.loginText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-darkgreen-color);
 }

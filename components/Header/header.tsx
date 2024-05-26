@@ -8,14 +8,16 @@ import Button from "../Button/button";
 import NavBar from "../NavBar/navBar";
 import { links } from "../../constans/links";
 import Link from "next/link";
+import BurgerMenu from "../BurgerMenu/burgerMenu";
 
 const Header = () => {
   const [showSignUp, setShowSignUp] = useState(false);
+  const [isMobileOpen, setMobileOpen]=useState(false)
   return (
     <div className={styles.main}>
       <div className={styles.logoBox}>
         <Image className={styles.logo} src={logo} alt="bicycle logo " />
-        <Image className={styles.line} src={line} alt="line " />
+       
       </div>
       <div className={styles.menu}>
         <NavBar links={links} />
@@ -37,6 +39,18 @@ const Header = () => {
         </div>
       )} 
       </div>
+       <BurgerMenu onClick={()=>{console.log('onclick');setMobileOpen((prevState)=>!prevState)}}/>
+       <div className={`${styles.mobileMenu} ${isMobileOpen && styles.mobileMenuOpen }`}>
+       <nav className={styles.mobileNav}>
+                <ul className={styles.links}>
+                {links.map((link)=>{
+                    return <a href={link.href} key={link.id}>{link.title}</a>
+
+                })}
+                </ul>
+            </nav>
+            
+       </div>
        
     </div>
   );

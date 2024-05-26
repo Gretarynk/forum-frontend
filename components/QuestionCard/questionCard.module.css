@@ -5,14 +5,31 @@
     padding: 2rem;
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
+.titleBox{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 2rem;
+    
+    
+   
+}
 
 .main h1{
     color: var(--box5-color);
+    font-size: 20px;
+    margin: 0;
 }
 .main h4{
-    color: var(--box5-color);
+    margin: 0;
+    color: var(--box3-color);
+    
+}
+.main h3{
+    font-size: 15px;
 }
 .main h5{
+    margin: 0;
     color: var(--main-palegreen-color);
 }
 .date{
@@ -25,4 +42,14 @@
   .dateReplyBox{
     display: flex;
     justify-content: space-between;
+  }
+  @media only screen and (max-width: 920px){
+    .main{
+        width: 80%;
+        background-color: var(--main-light-color);
+        border-bottom: 3px solid var(--main-blue-color);
+        padding: 2rem;
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    }
+
   }

@@ -1,5 +1,6 @@
 .replyBox{
-    width: 100%;
+    margin: auto;
+    width: 90%;
     background-color:var(--main-light-color);
     padding: 2rem;
     display: flex;

@@ -1,18 +1,15 @@
 /* modal.module.css */
 .wrapper {
-
+    width: 400px;
     position: fixed;
-    display: flex;
-    gap: 2rem;
+    display: flex; 
     flex-direction: column;
     justify-content: center;
     background-color: var(--box6-color);
-    left: 50%;
-    top: 20rem;
-    transform: translateX(-50%);
+    transform: translate(25%, 30%);
     padding: 2rem;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    z-index: 2;
+   
    
   }
   
@@ -26,6 +23,12 @@
     padding: 3rem;
 
   }
+  .signText{
+    align-self: center;
+    color: var(--main-light-color);
+    padding-bottom: 1rem;
+   
+  }
   
   .input {
     margin-bottom: 10px;
@@ -33,24 +36,26 @@
     border: none;
     border-radius: 4px;
     width: 90%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
   }
   
-  .btnLogin, .btnClose {
-    margin-top: 10px;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+ 
   
-  /* .btnLogin {
-    background-color: #0070f3;
+   .btnLogin {
+    background-color: var(--main-palegreen-color);
     color: white;
-  } */
+  } 
   
   .btnClose {
-    background-color: red;
+    background-color:red;
     color: white;
+    width: 30px ;
+    height: 30px;
+    padding: 0 ! important ;
+    align-self: flex-end;
+    
+    
+    
   }
   .textSigned{
     color: var(--box5-color);
@@ -61,13 +66,56 @@
     margin-top: 10px;
   }
   .mainBox{
-    background-color: rgba(104, 43, 1, 0.488);
+    background-color: rgba(245, 239, 235, 0.835);
     position: fixed;
     height: 100vh;
     width: 700px;
-    top: 0;
-    left: 50%;
+   top: 0;
+   left: -70%;
+  
     
     transform: translateX(-50%);
   }
+  .linkWrapper{
+    display: flex;
+    justify-content: center;
+  }
+  .link{
+    color: white;
+  }
+  @media only screen and (max-width: 1118px){
+
+    .mainBox{
+      
+       left: -100%;
+        transform: translateX(50%);
+      }
+
+
+  }
+  @media only screen and (max-width: 900px){
+
+    .mainBox{
+       width: 500px; 
+      left: -30%;
+       transform: translateX(-50%); 
+     }
+
+     .main {
+      width: 200px;
+   height: 400px;
+      display: flex;
+      flex-direction: column;
+      
+      justify-content: center;
+      padding: 3rem;
   
+    }
+    .wrapper{
+      width: 300px;
+      transform: translate(20%, 30%);
+    }
+
+  }
+
+ 

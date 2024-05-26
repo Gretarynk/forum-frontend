@@ -44,6 +44,10 @@ const Login = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.main}>
+        <div className={styles.loginText}>
+        <h2>Login </h2>
+        <h3>Please enter your email and password</h3>
+        </div>
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
