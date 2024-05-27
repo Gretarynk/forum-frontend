@@ -33,12 +33,18 @@ const [questions, setQuestions] = useState<QuestionType[] | null>(null);
   useEffect(() => {
     fetchQuestions();
   }, []);
+
+  const handleDeleteQuestion = (deletedQuestionId: string) => {
+    setQuestions(prevQuestions => 
+      prevQuestions.filter(question => question.id !== deletedQuestionId)
+    );
+  };
   return (
     <PageTemplate>
       <div>
         <AddQuestion fetchQuestions={fetchQuestions} />
       
-      <div>{questions && <AddFetchBox questions={questions} />}</div>
+      <div>{questions && <AddFetchBox questions={questions} onDeleteQuestion={handleDeleteQuestion}/>}</div>
       </div>
     </PageTemplate>
   );

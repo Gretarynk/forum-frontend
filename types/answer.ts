@@ -3,6 +3,6 @@ export type AnswerType={
     answer_text: string;
     date:string;
     likes_number:string [];
-    dislikes:string [];
+    dislikes:string [] ;
   
 }

@@ -63,6 +63,19 @@ const Forum=()=>{
     setFilteredQuestions(updatedQuestions);
   };
 
+
+  
+  const handleDeleteQuestion = (deletedQuestionId: string) => {
+    // Update the questions state to remove the deleted question
+    setQuestions(prevQuestions => 
+      prevQuestions.filter(question => question.id !== deletedQuestionId)
+    );
+
+    // Update the filteredQuestions state to remove the deleted question
+    setFilteredQuestions(prevQuestions => 
+      prevQuestions.filter(question => question.id !== deletedQuestionId)
+    );
+  };
   if (!mounted) {
     return null; // Prevent rendering on the server-side
   }
@@ -74,7 +87,7 @@ const Forum=()=>{
        <FilterOptions selectedRegion={selectedRegion} onSelectRegion={handleRegionChange} onSortChange={handleSortChange} onApplyFilter={handleFilter} />
 
       
-        {filteredQuestions && <QuestionWrapper questions={filteredQuestions}/>}
+        {filteredQuestions && <QuestionWrapper questions={filteredQuestions}  onDeleteQuestion={handleDeleteQuestion}/>}
        </div>
        </PageTemplate>
     )

@@ -1,8 +1,7 @@
 import styles from "../QuestionCard/questionCard.module.css";
 import Link from "next/link";
 import { format } from "date-fns";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+
 import axios from "axios";
 import cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
@@ -30,9 +29,9 @@ const QuestionCard = ({id,
   date,
   region, answers, userId, className, onDeleteQuestion = () => {},
 }: QuestionProps) => {
-//  console.log(id, region, userId)
+console.log("card",answers)
 
- const router = useRouter();
+ 
  const getCurrentUserId = () => {
   const token = cookies.get("jwt_token");
   if (token) {

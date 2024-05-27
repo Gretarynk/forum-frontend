@@ -4,13 +4,15 @@ import { QuestionType } from "../../types/question";
 
 type QuestionWrapperProps = {
   questions: QuestionType[];
-  onDeleteQuestion:(deletedQuestionId: string)=>void;
+  onDeleteQuestion?: (deletedQuestionId: string) => void;
 };
-const QuestionWrapper = ({ questions,onDeleteQuestion}: QuestionWrapperProps) => {
-  console.log(questions);
+const QuestionWrapper = ({
+  questions,
+  onDeleteQuestion,
+}: QuestionWrapperProps) => {
+  console.log("questionWrapper", questions);
   return (
     <div className={styles.main}>
-     
       <div className={styles.questionBox}>
         {questions.map((question) => (
           <QuestionCard
@@ -23,9 +25,7 @@ const QuestionWrapper = ({ questions,onDeleteQuestion}: QuestionWrapperProps) =>
             answers={question.answers}
             userId={question.user_id}
             onDeleteQuestion={onDeleteQuestion}
-           
           />
-          
         ))}
       </div>
     </div>

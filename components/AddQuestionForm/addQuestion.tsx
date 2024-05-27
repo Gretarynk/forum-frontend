@@ -16,7 +16,8 @@ const AddQuestion = ({fetchQuestions}:AddQuestionProps) => {
   const [question_title, setQuestion_title] = useState("");
   const [question_text, setQuestion_text] = useState("");
   const [region, setRegion] = useState("");
-
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const addQuestion = async () => {
     try {
       const newQuestion = {
@@ -33,15 +34,19 @@ const AddQuestion = ({fetchQuestions}:AddQuestionProps) => {
         { headers }
       );
       if (response.status === 200) {
+        setSuccessMessage("Question submitted successfully!");
         fetchQuestions();
         setQuestion_title('')
         setQuestion_text('')
         setRegion('')
+        setErrorMessage('')
       }
     } catch (err) {
       if (err.response.status === 401) {
+        
         router.push("/login");
       }
+      setErrorMessage("Please,check if you choose region and provided correct information  ")
       console.log("err", err);
     }
   };
@@ -83,6 +88,8 @@ const AddQuestion = ({fetchQuestions}:AddQuestionProps) => {
           
         } onClick={addQuestion} text="Submit" type="VALID" />
       </div>
+      {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
+      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
     </div>
   );
 };

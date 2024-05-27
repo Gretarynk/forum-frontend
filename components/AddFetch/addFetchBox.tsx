@@ -6,8 +6,9 @@ import QuestionCard from "../QuestionCard/questionCard";
 
 type AddFetchBoxProps = {
   questions: QuestionType[];
+  onDeleteQuestion?:(deletedQuestionId: string)=>void;
 };
-const AddFetchBox = ({ questions }: AddFetchBoxProps) => {
+const AddFetchBox = ({ questions, onDeleteQuestion }: AddFetchBoxProps) => {
   return (
     <div className={styles.main}>
       {questions.map((question) => (
@@ -18,6 +19,8 @@ const AddFetchBox = ({ questions }: AddFetchBoxProps) => {
           date={question.date}
           region={question.region}
           answers={question.answers}
+          userId={question.user_id}
+          onDeleteQuestion={onDeleteQuestion}
          
         />
       ))}

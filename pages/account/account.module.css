@@ -1,0 +1,17 @@
+.main{
+    margin:auto;
+    width: 100%;
+    min-width: 500px;
+   min-height: 100vh;
+    background-color:var( --background);
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+    align-items: center;
+}
+.textBox{
+    width: 90%;
+    background-color: var(--main-light-color);
+    padding: 1rem;
+    
+}

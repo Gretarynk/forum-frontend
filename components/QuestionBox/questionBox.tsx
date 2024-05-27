@@ -16,6 +16,10 @@ type QuestionBoxProps = {
   question: QuestionType;
 };
 const QuestionBox = ({ question }: QuestionBoxProps) => {
+  console.log("questionBox",question.answers)
+
+  const answersCount = question.answers ? question.answers.length : 0;
+  console.log("boxAnswer",answersCount)
   return (
     <div className={styles.main}>
       {question && (
@@ -28,7 +32,7 @@ const QuestionBox = ({ question }: QuestionBoxProps) => {
           date={question.date}
           region={question.region}
           userId={question.user_id}
-          answers={question.answers}/>
+          answers={answersCount}/>
          
         </div>
       )}
