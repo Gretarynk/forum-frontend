@@ -1,5 +1,5 @@
 import PageTemplate from "../../components/PageTemplate/pageTemplate";
-import AddFetchBox from "@/components/AddFetch/addFetchBox";
+import AddFetchBox from "@/components/AddedFetchedQuestions/addFetchBox";
 import { QuestionType } from "../../types/question";
 import { useRouter } from "next/router";
 import axios from "axios";

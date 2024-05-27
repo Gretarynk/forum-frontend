@@ -3,8 +3,10 @@
     height: 70px;
     background-color: var(--main-blue-color);
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: space-between;
     align-items: center;
+    
+    
     /* position: fixed;
     bottom:0; */
    
@@ -14,4 +16,9 @@
 .bicycle{
     height: 40px;
   
+}
+.made{
+    color: var(--main-light-color);
+    padding-left: 50%;
+    font-size: x-small;
 }
