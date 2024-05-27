@@ -24,10 +24,12 @@ const ReplyCard=({answer, updateDislikes,updateLikes, fetchAnswers}:ReplyCardPro
             <p>{answer.answer_text}</p>
             <h5>{formatDate(answer.date)}</h5>
             {/* <h3>person</h3> */}
+            <div className={styles.likesDislikesBox} >
   <LikeButton answerId={answer.id} likesCount={answer.likes_number.length} updateLikes={updateLikes}
         updateDislikes={updateDislikes}/>
   <DislikeButton answerId={answer.id} dislikesCount={answer.dislikes.length} updateLikes={updateLikes}
         updateDislikes={updateDislikes}  />
+        </div>
         </div>
     )
 }
