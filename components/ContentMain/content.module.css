@@ -55,10 +55,22 @@
 @media only screen and (max-width: 768px){
     .main{
         display: grid;
-        grid-template-columns: 1fr 1fr ;}
+        grid-template-columns: 1fr 1fr ;
+    margin: auto;}
         .box{
             width: 150px;
             height: 150px;
             font-size: 15px;
+        }
+}
+@media only screen and (max-width: 480px){
+    .main{
+        display: grid;
+        grid-template-columns: 1fr ;
+    margin: auto;}
+        .box{
+            width: 250px;
+            height: 250px;
+            font-size: 20px;
         }
 }
