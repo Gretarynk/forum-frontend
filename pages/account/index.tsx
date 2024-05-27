@@ -12,7 +12,7 @@ import styles from "../account/account.module.css"
 const Account = () => {
   const router=useRouter();
   const [questions, setQuestions] = useState<QuestionType[] >([]);
-  const [mounted, setMounted] = useState(false);
+ 
   
   useEffect(() => {
     

@@ -14,6 +14,7 @@ const Forum=()=>{
   const [selectedRegion, setSelectedRegion] = useState<string>("");
   const [sortByReplies, setSortByReplies] = useState<string>("");
   const [filteredQuestions, setFilteredQuestions] = useState<QuestionType[] >([]);
+  const [message, setMessage]=useState('')
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -53,6 +54,11 @@ const Forum=()=>{
     if (selectedRegion) {
       updatedQuestions = updatedQuestions.filter((question) => question.region === selectedRegion);
     }
+    if (updatedQuestions.length === 0) {
+      setMessage('No questions available for the selected region.');
+    } else {
+      setMessage(''); // Clear the message if questions are available
+    }
 
     if (sortByReplies === "replies") {
       updatedQuestions = updatedQuestions.filter((question) => question.answers > 0);
@@ -60,9 +66,12 @@ const Forum=()=>{
       updatedQuestions = updatedQuestions.filter((question) => question.answers === 0);
     }
 
+   
+  
+
     setFilteredQuestions(updatedQuestions);
   };
-
+ 
 
   
   const handleDeleteQuestion = (deletedQuestionId: string) => {
@@ -85,10 +94,12 @@ const Forum=()=>{
        <PageTemplate>
        <div> 
        <FilterOptions selectedRegion={selectedRegion} onSelectRegion={handleRegionChange} onSortChange={handleSortChange} onApplyFilter={handleFilter} />
-
       
-        {filteredQuestions && <QuestionWrapper questions={filteredQuestions}  onDeleteQuestion={handleDeleteQuestion}/>}
+     {message&&<div style={{color:"green", backgroundColor:"white" , width:"90%", textAlign:"center", margin:"auto"  }}>{message}</div>}
+        {filteredQuestions && <QuestionWrapper questions={filteredQuestions}  onDeleteQuestion={handleDeleteQuestion}/> }
+      
        </div>
+
        </PageTemplate>
     )
 }

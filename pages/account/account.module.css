@@ -13,5 +13,7 @@
     width: 90%;
     background-color: var(--main-light-color);
     padding: 1rem;
-    
+    color: var(--main-palegreen-color);
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+   
 }
