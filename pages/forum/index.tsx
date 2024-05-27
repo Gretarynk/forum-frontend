@@ -6,7 +6,7 @@ import axios from "axios"
 import {useEffect,useState} from "react";
 import cookies from "js-cookie"
 import FilterOptions from "@/components/Filter/filter";
-import Button from "@/components/Button/button";
+
 
 const Forum=()=>{
   const router = useRouter();

@@ -23,6 +23,7 @@
 .main h4{
     margin: 0;
     color: var(--box3-color);
+    box-shadow: rgba(17, 17, 26, 0.218) 0px 1px 0px;
     
 }
 .main h3{

@@ -10,14 +10,17 @@ type ContentProps = {
 const Content = () => {
   return (
     <div className={styles.main}>
+       <Link className={styles.mainLink} href={"/ask"}>
+        <div className={`${styles.box} ${styles.box2}`}> Ask Question</div>
+      </Link>
       <div className={`${styles.box} ${styles.box1}`}>
         <p className={styles.text}>
           This forum for enthuasist who like ride but looking for new routes to
           explore around Lithuania{" "}
         </p>
       </div>
-      <Link className={styles.mainLink} href={"/ask"}>
-        <div className={`${styles.box} ${styles.box2}`}> Ask Question</div>
+      <Link className={styles.mainLink} href={"/forum"}>
+        <div className={`${styles.box} ${styles.box4}`}> Forum </div>
       </Link>
       <div className={`${styles.box} ${styles.box3}`}>
         {" "}
@@ -26,9 +29,7 @@ const Content = () => {
           time riding bike or plan your route on experiences of other people
         </p>{" "}
       </div>
-      <Link className={styles.mainLink} href={"/forum"}>
-        <div className={`${styles.box} ${styles.box4}`}> Forum </div>
-      </Link>
+    
       <div className={`${styles.box} ${styles.box5}`}>
         {" "}
         <p className={styles.text}>

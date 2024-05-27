@@ -59,7 +59,7 @@ const AddQuestion = ({fetchQuestions}:AddQuestionProps) => {
         value={question_text}
         onChange={(e) => setQuestion_text(e.target.value)}
         className={styles.inputText}
-        placeholder="Type your question"
+        placeholder="Type your question, min 30 characters..."
       />
       <div className={styles.region}>
         <h3>Choose region *</h3>

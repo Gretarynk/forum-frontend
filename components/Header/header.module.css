@@ -90,7 +90,8 @@ width: 100%;
     }
     .btnSign{
         background-color: transparent;
-        padding: 1rem;
+        padding: 0.5rem !important;
+        width: 150px;
     }
 
     .logoBox{
@@ -101,8 +102,9 @@ width: 100%;
         justify-content: center;
         align-self: end;
         cursor: pointer;
-        position: fixed;
+        position:absolute;
         right: -21%;
+        
        
    
         

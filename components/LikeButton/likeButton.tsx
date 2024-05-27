@@ -55,7 +55,7 @@ const LikeButton = ({
         src={redHeart}
        
       /> 
-      Like {likesCount}
+       {likesCount}
       
     </div>
   );

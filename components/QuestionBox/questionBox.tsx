@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import cookies from "js-cookie";
 import { QuestionType } from "../../types/question";
 import { format } from "date-fns";
+import QuestionCard from "../QuestionCard/questionCard";
 
 const formatDate = (dateString: string): string => {
   return format(new Date(dateString), 'yyyy-MM-dd HH:mm:ss');
@@ -19,10 +20,16 @@ const QuestionBox = ({ question }: QuestionBoxProps) => {
     <div className={styles.main}>
       {question && (
         <div className={styles.questionBox}>
-          <h1>{question.question_title}</h1>
-          <h4>{question.region}</h4>
-          <h3>{question.question_text}</h3>
-          <h5>{formatDate(question.date)}</h5>
+          <QuestionCard className={styles.questionCard}
+          key={question.id}
+          id={question.id}
+          question_title={question.question_title}
+          question_text={question.question_text}
+          date={question.date}
+          region={question.region}
+          userId={question.user_id}
+          answers={question.answers}/>
+         
         </div>
       )}
     </div>

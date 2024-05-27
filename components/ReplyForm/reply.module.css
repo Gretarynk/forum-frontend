@@ -25,3 +25,9 @@
     background-color: var(--main-blue-color);
     color: white;
 }
+
+@media only screen and (max-width: 768px){
+    .replyBox{
+        width: 80%;
+    }
+}

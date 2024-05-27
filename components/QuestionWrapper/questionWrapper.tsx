@@ -4,8 +4,9 @@ import { QuestionType } from "../../types/question";
 
 type QuestionWrapperProps = {
   questions: QuestionType[];
+  onDeleteQuestion:(deletedQuestionId: string)=>void;
 };
-const QuestionWrapper = ({ questions }: QuestionWrapperProps) => {
+const QuestionWrapper = ({ questions,onDeleteQuestion}: QuestionWrapperProps) => {
   console.log(questions);
   return (
     <div className={styles.main}>
@@ -20,6 +21,8 @@ const QuestionWrapper = ({ questions }: QuestionWrapperProps) => {
             date={question.date}
             region={question.region}
             answers={question.answers}
+            userId={question.user_id}
+            onDeleteQuestion={onDeleteQuestion}
            
           />
           

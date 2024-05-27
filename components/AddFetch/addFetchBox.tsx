@@ -1,6 +1,6 @@
 import styles from "../AddFetch/addFetchBox.module.css";
 import { QuestionType } from "../../types/question";
-import QuestionTitle from "../QuestionTitle/questionTitle";
+
 import QuestionCard from "../QuestionCard/questionCard";
 
 
