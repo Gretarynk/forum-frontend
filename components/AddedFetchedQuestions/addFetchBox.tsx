@@ -3,10 +3,9 @@ import { QuestionType } from "../../types/question";
 
 import QuestionCard from "../QuestionCard/questionCard";
 
-
 type AddFetchBoxProps = {
   questions: QuestionType[];
-  onDeleteQuestion?:(deletedQuestionId: string)=>void;
+  onDeleteQuestion?: (deletedQuestionId: string) => void;
 };
 const AddFetchBox = ({ questions, onDeleteQuestion }: AddFetchBoxProps) => {
   return (
@@ -21,7 +20,6 @@ const AddFetchBox = ({ questions, onDeleteQuestion }: AddFetchBoxProps) => {
           answers={question.answers}
           userId={question.user_id}
           onDeleteQuestion={onDeleteQuestion}
-         
         />
       ))}
     </div>

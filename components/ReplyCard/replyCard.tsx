@@ -21,7 +21,6 @@ const ReplyCard = ({
   updateLikes,
   fetchAnswers,
 }: ReplyCardProps) => {
- 
   return (
     <div className={styles.main}>
       <p>{answer.answer_text}</p>

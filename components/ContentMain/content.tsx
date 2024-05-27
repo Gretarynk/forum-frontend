@@ -1,22 +1,15 @@
 import styles from "../ContentMain/content.module.css";
-import axios from "axios";
 import Link from "next/link";
-
-type ContentProps = {
-  text: string;
-  onClick: () => void;
-};
 
 const Content = () => {
   return (
     <div className={styles.main}>
-       <Link className={styles.mainLink} href={"/ask"}>
+      <Link className={styles.mainLink} href={"/ask"}>
         <div className={`${styles.box} ${styles.box2}`}> Ask Question</div>
       </Link>
       <div className={`${styles.box} ${styles.box1}`}>
         <p className={styles.text}>
-          This forum to share and to find new routes to
-          explore around Lithuania{" "}
+          This forum to share and to find new routes to explore around Lithuania{" "}
         </p>
       </div>
       <Link className={styles.mainLink} href={"/forum"}>
@@ -28,7 +21,7 @@ const Content = () => {
           You can ask, and find new routes, where to stay and what to see...
         </p>{" "}
       </div>
-    
+
       <div className={`${styles.box} ${styles.box5}`}>
         {" "}
         <p className={styles.text}>

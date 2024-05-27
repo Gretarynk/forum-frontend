@@ -1,7 +1,6 @@
 import styles from "../QuestionCard/questionCard.module.css";
 import Link from "next/link";
 import { format } from "date-fns";
-
 import axios from "axios";
 import cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
@@ -39,7 +38,7 @@ const QuestionCard = ({
     const token = cookies.get("jwt_token");
     if (token) {
       const decoded: any = jwtDecode(token);
-      return decoded.userId; // Adjust based on your JWT payload structure
+      return decoded.userId; // Adjust based on  JWT payload structure
     }
     return null;
   };

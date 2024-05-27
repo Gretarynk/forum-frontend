@@ -10,7 +10,7 @@ import AddQuestion from "@/components/AddQuestionForm/addQuestion";
 const AskQuestion = () => {
   const router = useRouter();
 
-const [questions, setQuestions] = useState<QuestionType[] | null>(null);
+  const [questions, setQuestions] = useState<QuestionType[] | null>(null);
 
   const fetchQuestions = async () => {
     try {
@@ -35,16 +35,23 @@ const [questions, setQuestions] = useState<QuestionType[] | null>(null);
   }, []);
 
   const handleDeleteQuestion = (deletedQuestionId: string) => {
-    setQuestions(prevQuestions => 
-      prevQuestions.filter(question => question.id !== deletedQuestionId)
+    setQuestions((prevQuestions) =>
+      prevQuestions.filter((question) => question.id !== deletedQuestionId)
     );
   };
   return (
     <PageTemplate>
       <div>
         <AddQuestion fetchQuestions={fetchQuestions} />
-      
-      <div>{questions && <AddFetchBox questions={questions} onDeleteQuestion={handleDeleteQuestion}/>}</div>
+
+        <div>
+          {questions && (
+            <AddFetchBox
+              questions={questions}
+              onDeleteQuestion={handleDeleteQuestion}
+            />
+          )}
+        </div>
       </div>
     </PageTemplate>
   );

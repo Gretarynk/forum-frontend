@@ -1,34 +1,33 @@
-.replyBox{
-    margin: auto;
-    width: 90%;
-    background-color:var(--main-light-color);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-   
+.replyBox {
+  margin: auto;
+  width: 90%;
+  background-color: var(--main-light-color);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.replyInput{
-    padding: 1rem;
-    height: 50px;
-    border: none;
-    /* border-bottom: 1px solid var(--main-darkblue-color); */
-    background-color: white;
-    /* box-shadow: rgba(244, 194, 46, 0.156) 0px 30px 60px -12px inset, rgba(188, 170, 91, 0.628) 0px 18px 36px -18px inset; */
-     box-shadow: rgb(232, 219, 204) 3px 3px 6px 0px inset, rgba(255, 248, 231, 0.5) -3px -3px 6px 1px inset; 
-     outline: none;
-     font-family: Arial, Helvetica, sans-serif;
-
+.replyInput {
+  padding: 1rem;
+  height: 50px;
+  border: none;
+  /* border-bottom: 1px solid var(--main-darkblue-color); */
+  background-color: white;
+  /* box-shadow: rgba(244, 194, 46, 0.156) 0px 30px 60px -12px inset, rgba(188, 170, 91, 0.628) 0px 18px 36px -18px inset; */
+  box-shadow: rgb(232, 219, 204) 3px 3px 6px 0px inset,
+    rgba(255, 248, 231, 0.5) -3px -3px 6px 1px inset;
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
 }
-.replyBtn{
-    padding: 1rem 2rem;
-    background-color: var(--main-blue-color);
-    color: white;
+.replyBtn {
+  padding: 1rem 2rem;
+  background-color: var(--main-blue-color);
+  color: white;
 }
 
-@media only screen and (max-width: 768px){
-    .replyBox{
-        width: 80%;
-    }
+@media only screen and (max-width: 768px) {
+  .replyBox {
+    width: 80%;
+  }
 }
