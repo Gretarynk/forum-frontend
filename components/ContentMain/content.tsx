@@ -15,7 +15,7 @@ const Content = () => {
       </Link>
       <div className={`${styles.box} ${styles.box1}`}>
         <p className={styles.text}>
-          This forum for enthuasist who like ride but looking for new routes to
+          This forum to share and to find new routes to
           explore around Lithuania{" "}
         </p>
       </div>
@@ -25,8 +25,7 @@ const Content = () => {
       <div className={`${styles.box} ${styles.box3}`}>
         {" "}
         <p className={styles.text}>
-          You can ask aboutnot popular places villages where you can spend nice
-          time riding bike or plan your route on experiences of other people
+          You can ask, and find new routes, where to stay and what to see...
         </p>{" "}
       </div>
     
@@ -38,7 +37,7 @@ const Content = () => {
       </div>
       <div className={`${styles.box} ${styles.box6}`}>
         {" "}
-        <p className={styles.text}>....</p>
+        <p className={styles.text}>...</p>
       </div>
     </div>
   );
