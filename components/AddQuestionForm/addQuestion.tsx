@@ -39,13 +39,15 @@ const AddQuestion = ({ fetchQuestions }: AddQuestionProps) => {
         setRegion("");
         setErrorMessage("");
       }
-    } catch (err) {if (axios.isAxiosError(err))
-      {if (err.response?.status === 401) {
-        router.push("/login");
+    } catch (err) {
+      if (axios.isAxiosError(err)) {
+        if (err.response?.status === 401) {
+          router.push("/login");
+        }
+        setErrorMessage(
+          "Please,check if you choose region and provided correct information  "
+        );
       }
-      setErrorMessage(
-        "Please,check if you choose region and provided correct information  "
-      )};
       console.log("err", err);
     }
   };
