@@ -39,7 +39,7 @@ const AskQuestion = () => {
 
   const handleDeleteQuestion = (deletedQuestionId: string) => {
     setQuestions((prevQuestions) =>
-      prevQuestions.filter((question) => question.id !== deletedQuestionId)
+      prevQuestions ? prevQuestions.filter((question) => question.id !== deletedQuestionId) : []
     );
   };
   return (
