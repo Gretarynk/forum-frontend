@@ -1,8 +1,4 @@
 import styles from "../QuestionBox/questionBox.module.css";
-import { useState } from "react";
-import axios from "axios";
-import { useRouter } from "next/router";
-import cookies from "js-cookie";
 import { QuestionType } from "../../types/question";
 import { format } from "date-fns";
 import QuestionCard from "../QuestionCard/questionCard";
@@ -17,8 +13,8 @@ type QuestionBoxProps = {
 };
 const QuestionBox = ({ question }: QuestionBoxProps) => {
   console.log("questionBox",question.answers)
-
-  const answersCount = question.answers ? question.answers.length : 0;
+// ? question.answers.length : 0
+  const answersCount = question.answers ;
   console.log("boxAnswer",answersCount)
   return (
     <div className={styles.main}>
