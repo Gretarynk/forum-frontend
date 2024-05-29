@@ -3,7 +3,7 @@ import AddFetchBox from "@/components/AddedFetchedQuestions/addFetchBox";
 import { QuestionType } from "../../types/question";
 import { useRouter } from "next/router";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback} from "react";
 import cookies from "js-cookie";
 import AddQuestion from "@/components/AddQuestionForm/addQuestion";
 
@@ -12,7 +12,7 @@ const AskQuestion = () => {
 
   const [questions, setQuestions] = useState<QuestionType[] | null>(null);
 
-  const fetchQuestions = async () => {
+  const fetchQuestions = useCallback(async () => {
     try {
       const headers = {
         authorization: cookies.get("jwt_token"),
@@ -29,10 +29,10 @@ const AskQuestion = () => {
       }
       console.log("err", err);
     }
-  };
+  },[router]);
   useEffect(() => {
     fetchQuestions();
-  }, []);
+  }, [fetchQuestions]);
 
   const handleDeleteQuestion = (deletedQuestionId: string) => {
     setQuestions((prevQuestions) =>

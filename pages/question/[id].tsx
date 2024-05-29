@@ -2,7 +2,7 @@ import PageTemplate from "../../components/PageTemplate/pageTemplate";
 import axios from "axios";
 import { useRouter } from "next/router";
 import cookies from "js-cookie";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import QuestionBox from "../../components/QuestionBox/questionBox";
 import Reply from "../../components/ReplyForm/reply";
 import ReplyWrapper from "../../components/ReplyWrapper/replyWrapper";
@@ -12,7 +12,7 @@ const Question = () => {
   const router = useRouter();
   const [answers, setAnswers] = useState<AnswerType[] | null>(null);
   const [question, setQuestion] = useState();
-  const fetchQuestion = async () => {
+  const fetchQuestion = useCallback(async () => {
     try {
       const headers = {
         authorization: cookies.get("jwt_token"),
@@ -30,10 +30,10 @@ const Question = () => {
       }
       console.log("err", err);
     }
-  };
+  },[router]);
   useEffect(() => {
     router.query.id && fetchQuestion();
-  }, [router.query.id]);
+  }, [fetchQuestion, router.query.id]);
 
   const fetchAnswers = async () => {
     try {
