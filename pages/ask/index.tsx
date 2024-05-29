@@ -24,8 +24,11 @@ const AskQuestion = () => {
       console.log(response);
       setQuestions(response.data.questions);
     } catch (err) {
-      if (err.response.status === 401) {
-        router.push("/login");
+      
+      if (axios.isAxiosError(err)) {
+        if (err.response?.status === 401) {
+          router.push("/login");
+        }
       }
       console.log("err", err);
     }

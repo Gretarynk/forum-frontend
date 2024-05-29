@@ -24,10 +24,10 @@ const Question = () => {
       );
       console.log(response);
       setQuestion(response.data.question);
-    } catch (err) {
-      if (err.response.status === 401) {
+    } catch (err) {if (axios.isAxiosError(err))
+      {if (err.response?.status === 401) {
         router.push("/login");
-      }
+      }}
       console.log("err", err);
     }
   },[router]);
@@ -62,7 +62,7 @@ const Question = () => {
     if (router.query.id) {
       fetchAnswers();
     }
-  }, [router.query.id]);
+  }, [,router.query.id]);
 
   return (
     <PageTemplate>

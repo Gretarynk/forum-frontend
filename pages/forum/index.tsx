@@ -29,10 +29,10 @@ const Forum = () => {
         );
         setQuestions(response.data.questions);
         setFilteredQuestions(response.data.questions); // Initially display all questions
-      } catch (err) {
-        if (err.response?.status === 401) {
+      } catch (err) {if (axios.isAxiosError(err))
+        {if (err.response?.status === 401) {
           router.push("/login");
-        }
+        }}
         console.log("err", err);
       }
     };
