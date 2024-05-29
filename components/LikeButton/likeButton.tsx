@@ -43,7 +43,6 @@ const LikeButton = ({
     }
   };
 
-//
 
   return (
     <div>

@@ -11,7 +11,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [isError, setError] = useState(false);
   const [isBadLogin, setBadLogin] = useState(false);
-  //   const [isLoading,setLoading]=useState(false)
+  
   const onLogin = async () => {
     const loginData = {
       email: email,
@@ -28,8 +28,8 @@ const Login = () => {
         `${process.env.SERVER_URL}/users/login`,
         loginData
       );
-      console.log("response", response);
-      console.log("loginData", loginData);
+      // console.log("response", response);
+      // console.log("loginData", loginData);
       if (response.status === 200) {
         cookies.set("jwt_token", response.data.jwt_token);
         router.push("/");

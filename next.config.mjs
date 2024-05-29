@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   env: {
-    SERVER_URL: "http://localhost:3000",
+    SERVER_URL: "https://forum-backend-cizf.onrender.com",
   },
 };
 
