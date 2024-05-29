@@ -24,18 +24,20 @@ const Question = () => {
       );
       console.log(response);
       setQuestion(response.data.question);
-    } catch (err) {if (axios.isAxiosError(err))
-      {if (err.response?.status === 401) {
-        router.push("/login");
-      }}
+    } catch (err) {
+      if (axios.isAxiosError(err)) {
+        if (err.response?.status === 401) {
+          router.push("/login");
+        }
+      }
       console.log("err", err);
     }
-  },[router]);
+  }, [router]);
   useEffect(() => {
     router.query.id && fetchQuestion();
   }, [fetchQuestion, router.query.id]);
 
-  const fetchAnswers = async () => {
+  const fetchAnswers = useCallback(async () => {
     try {
       const headers = {
         authorization: cookies.get("jwt_token"),
@@ -52,17 +54,19 @@ const Question = () => {
         console.log("reply");
       }
     } catch (err) {
-      if (err.response.status === 401) {
-        router.push("/login");
+      if (axios.isAxiosError(err)) {
+        if (err.response?.status === 401) {
+          router.push("/login");
+        }
       }
       console.log("err", err);
     }
-  };
+  }, [router]);
   useEffect(() => {
     if (router.query.id) {
       fetchAnswers();
     }
-  }, [,router.query.id]);
+  }, [fetchAnswers, router.query.id]);
 
   return (
     <PageTemplate>
